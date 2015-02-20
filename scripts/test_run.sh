@@ -13,7 +13,7 @@ if [ ! -d $pylmm_lib_path ]; then
     exit 1
 fi
 
-env PYTHONPATH=$pylmm_lib_path python $pylmm_lib_path/pylmmGWAS.py -v --bfile data/test_snps.132k.clean.noX --kfile data/test_snps.132k.clean.noX.pylmm.kin --phenofile data/test_snps.132k.clean.noX.fake.phenos out.foo --test
+/usr/bin/time env PYTHONPATH=$pylmm_lib_path python $pylmm_lib_path/pylmmGWAS.py -v --bfile data/test_snps.132k.clean.noX --kfile data/test_snps.132k.clean.noX.pylmm.kin --phenofile data/test_snps.132k.clean.noX.fake.phenos out.foo --test
 # env PYTHONPATH=$pylmm_lib_path python $pylmm_lib_path/lmm.py
 exit 0
 
