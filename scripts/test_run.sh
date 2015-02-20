@@ -15,6 +15,7 @@ fi
 
 /usr/bin/time -v env PYTHONPATH=$pylmm_lib_path python $pylmm_lib_path/pylmmGWAS.py -v --bfile data/test_snps.132k.clean.noX --kfile data/test_snps.132k.clean.noX.pylmm.kin --phenofile data/test_snps.132k.clean.noX.fake.phenos out.foo --test
 # env PYTHONPATH=$pylmm_lib_path python $pylmm_lib_path/lmm.py
+md5sum *.foo
 exit 0
 
 /usr/bin/time -v env PYTHONPATH=. python scripts/pylmmKinship.py -v --bfile data/test_snps.132k.clean.noX out.kin --test --test -t 1
