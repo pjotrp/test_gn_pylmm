@@ -345,6 +345,9 @@ def compute_snp(j,snp_ids,q = None):
 def f_init(q):
    compute_snp.q = q
 
+out = open(outFile,'w')
+printOutHead()
+
 if options.test_gn2:
    print "TESTING GN2 (Y,G)"
    print(Y)
@@ -353,7 +356,7 @@ if options.test_gn2:
    count = 0
    for snp_id in IN:
       count += 1
-      if options.testing and count>8000 :
+      if options.testing and count>9000 :
          break         # for testing only
       snp,id = snp_id
       G.append(snp)
@@ -381,8 +384,7 @@ if options.test_gn2:
    print ps[0:10]
    for p in ps:
       # result.append(formatResult(id,beta,np.sqrt(betaVar).sum(),ts,ps))
-      print i
-      print formatResult(ids[i],-1,-1,ts[i],p)
+      out.write(formatResult(ids[i],-1,-1,ts[i],p))
       i = i + 1
    sys.exit(0)
 
@@ -396,8 +398,6 @@ collect = []
 # PS = []
 # TS = []
 count = 0
-out = open(outFile,'w')
-printOutHead()
 
 completed = 0
 last_j = 0
