@@ -349,6 +349,7 @@ if options.test_gn2:
    print "TESTING GN2 (Y,G)"
    print(Y)
    G = []
+   ids = []
    count = 0
    for snp_id in IN:
       count += 1
@@ -356,6 +357,7 @@ if options.test_gn2:
          break         # for testing only
       snp,id = snp_id
       G.append(snp)
+      ids.append(id)
    G = np.array(G)
    print(G)
    print("Calling into run_other\n")
@@ -367,9 +369,21 @@ if options.test_gn2:
    print("Y ",Y.shape)
    # Y = Y[keep]
    G = G.T[keep]
+   print ids[0:10]
+   ids = np.array(ids)
    print("G ",G.shape)
-   # sys.exit(0)
-   run_other(Y,G,restricted_max_likelihood=True,refit=False,tempdata=tempdata,is_testing=options.testing)
+   print("ids ",ids.shape)
+   # ts,ps,beta,betaVar = L.association(x,REML=options.REML,returnBeta=True)
+   ps,ts = run_other(Y,G,restricted_max_likelihood=True,refit=False,tempdata=tempdata,is_testing=options.testing)
+   print tempdata.get_all()
+   print "Results\n"
+   i = 0
+   print ps[0:10]
+   for p in ps:
+      # result.append(formatResult(id,beta,np.sqrt(betaVar).sum(),ts,ps))
+      print i
+      print formatResult(ids[i],-1,-1,ts[i],p)
+      i = i + 1
    sys.exit(0)
 
 # Set up the pool

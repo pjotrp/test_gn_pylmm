@@ -13,7 +13,7 @@ if [ ! -d $pylmm_lib_path ]; then
     exit 1
 fi
 
-/usr/bin/time -v env PYTHONPATH=$pylmm_lib_path:./lib python ./scripts/pylmmGWAS.py -v --bfile data/test_snps.132k.clean.noX --kfile data/test_snps.132k.clean.noX.pylmm.kin --phenofile data/test_snps.132k.clean.noX.fake.phenos out.foo --test
+/usr/bin/time -v env PYTHONPATH=$pylmm_lib_path:./lib python ./scripts/pylmmGWAS.py -v --bfile data/test_snps.132k.clean.noX --kfile data/test_snps.132k.clean.noX.pylmm.kin --phenofile data/test_snps.132k.clean.noX.fake.phenos out.foo --test --test-gn2
 # env PYTHONPATH=$pylmm_lib_path python $pylmm_lib_path/lmm.py
 md5sum *.foo
 exit 0
