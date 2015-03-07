@@ -14,7 +14,7 @@ if [ ! -d $pylmm_lib_path ]; then
 fi
 
 echo "*** Convert kinship, genotype and phenotype files to new format 1.0"
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/convertlmm.py -v --kinship data/test_snps.132k.clean.noX.pylmm.kin > test.kin
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/convertlmm.py -v --kinship data/test_snps.132k.clean.noX.pylmm.kin --plink data/test_snps.132k.clean.noX.fake.phenos --prefix ./test
 python my_pylmm/pyLMM/runlmm.py --kinship test.kin parse
 
 # /usr/bin/time -v env PYTHONPATH=$pylmm_lib_path:./lib python ./scripts/pylmmGWAS.py -v --genotype data/test_snps.132k.clean.noX --kfile data/test_snps.132k.clean.noX.pylmm.kin --phenofile data/test_snps.132k.clean.noX.fake.phenos
