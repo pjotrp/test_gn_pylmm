@@ -80,8 +80,6 @@ basicGroup.add_option("--covfile", dest="covfile",
                   help="The location of a covariate file file.  This is a plink formatted covariate file.")
 basicGroup.add_option("-p", type="int", dest="pheno", help="The phenotype index to be used in association.", default=0)
 
-
-
 advancedGroup.add_option("--removeMissingGenotypes",
                   action="store_false", dest="normalizeGenotype", default=True,
                   help="By default the program replaces missing genotypes with the minor allele frequency.  This option overrides that behavior making the program remove missing individuals.  NOTE: This can increase running time due to the need to recompute the eigendecomposition for each SNP with missing values.")
