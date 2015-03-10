@@ -375,9 +375,9 @@ if options.test_gn2:
    print("G ",G.shape)
    print("ids ",ids.shape)
    # ts,ps,beta,betaVar = L.association(x,REML=options.REML,returnBeta=True)
-   # print('kinship', np.array(K[0:10][0:10]))
-   # print('pheno', Y[0:10])
-   # print('geno', G[0:10][0:10])
+   print('kinship', np.array(K))
+   print('pheno', np.array(Y))
+   print('geno', np.array(G))
 
    ps,ts = run_other(Y,G,restricted_max_likelihood=True,refit=False,tempdata=tempdata,is_testing=options.testing)
    print tempdata.get_all()
