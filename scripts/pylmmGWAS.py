@@ -360,7 +360,7 @@ if options.test_gn2:
       G.append(snp)
       ids.append(id)
    G = np.array(G)
-   print(G)
+   # print(G)
    print("Calling into run_other\n")
    tempdata = temp_data.TempData('temp_uuid')
 
@@ -377,7 +377,7 @@ if options.test_gn2:
    # ts,ps,beta,betaVar = L.association(x,REML=options.REML,returnBeta=True)
    print('kinship', np.array(K))
    print('pheno', np.array(Y))
-   print('geno', np.array(G))
+   print('geno (after keep)', G.shape, G)
 
    ps,ts = run_other(Y,G,restricted_max_likelihood=True,refit=False,tempdata=tempdata,is_testing=options.testing)
    print tempdata.get_all()
