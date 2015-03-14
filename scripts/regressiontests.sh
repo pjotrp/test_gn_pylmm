@@ -1,0 +1,26 @@
+#! /bin/bash
+#
+#  Ascertain that the GN my_pylmm is linked as a symlink!
+#
+#  ./scripts/test_run.sh &> test.out
+#
+
+pylmm_path=my_pylmm
+pylmm_lib_path=my_pylmm/pyLMM
+
+if [ ! -d $pylmm_lib_path ]; then
+    echo "The symlink to $pylmm_path is not working!"
+    exit 1
+fi
+
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno redis &> test/data/regression/small.new
+[ $? -ne 0 ] && exit 1
+
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis &> test/data/regression/small_na.new
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/small.new test/data/regression/small.ref
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/small_na.new test/data/regression/small_na.ref
+[ $? -ne 0 ] && exit 1
