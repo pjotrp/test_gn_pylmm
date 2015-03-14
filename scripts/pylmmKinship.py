@@ -57,6 +57,9 @@ basicGroup.add_option("-n", default=1000,dest="computeSize", type="int", help="T
 basicGroup.add_option("-t", "--nthreads", dest="numThreads", help="maximum number of threads to use")
 basicGroup.add_option("--blas", action="store_true", default=False, dest="useBLAS", help="Use BLAS instead of numpy matrix multiplication")
 
+basicGroup.add_option("--full",
+                  action="store_true", dest="full", default=False,
+                  help="Use full matrix multiplication")
 basicGroup.add_option("--test",
                   action="store_true", dest="testing", default=False,
                   help="Testing mode")
@@ -77,12 +80,11 @@ outFile = args[0]
 import sys
 import os
 import numpy as np
-from pylmm.lmm import calculateKinship
-from pylmm import input
+import input
 import multiprocessing as mp # Multiprocessing is part of the Python stdlib
 import Queue 
 
-from pylmm.optmatrix import matrix_initialize, matrixMultT
+from optmatrix import matrix_initialize, matrixMultT
 matrix_initialize(options.useBLAS)
 
 
@@ -102,6 +104,16 @@ elif options.emmaFile:
    if not options.numSNPs: parser.error("You must provide the number of SNPs when specifying an emma formatted file.")
    IN = input.plink(options.emmaFile,type='emma')
 else: parser.error("You must provide at least one PLINK input file base (--tfile or --bfile) or an emma formatted file (--emmaSNP).")
+
+def kinship_full(G):
+    print G.shape
+    m = G.shape[0] # snps
+    n = G.shape[1] # inds
+    sys.stderr.write(str(m)+" SNPs\n")
+    assert m>n, "n should be larger than m (snps>inds)"
+    m = np.dot(G.T,G)
+    m = m/G.shape[0]
+    return m
 
 def compute_W(job):
    """
@@ -142,6 +154,22 @@ n = len(IN.indivs)
 IN.getSNPIterator()
 # Annoying hack to get around the fact that it is expensive to determine the number of SNPs in an emma file
 if options.emmaFile: IN.numSNPs = options.numSNPs
+
+if options.full:
+   print "Full operation"
+   if options.testing:
+      print "and testing"
+   g = []
+   for i in range(IN.numSNPs):
+      if options.testing and i>=8000:
+         break
+      snp,id = IN.next()
+      g.append(snp)
+   G = np.array(g)
+   print "G",G
+   k = kinship_full(G)
+   print k.shape,k
+   sys.exit(0)
 
 q = mp.Queue()
 p = mp.Pool(numThreads, f_init, [q])
@@ -188,6 +216,8 @@ if numThreads == None or numThreads > 1:
       K = K + K_j
         
 K = K / float(IN.numSNPs)
+print K.shape, K
+
 if options.verbose: sys.stderr.write("Saving Kinship file to %s\n" % outFile)
 np.savetxt(outFile,K)
 
