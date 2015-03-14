@@ -19,8 +19,14 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno da
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis > test/data/regression/small_na.new
 [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/small.new test/data/regression/small.ref
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis > test/data/regression/test8000.new
 [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/small_na.new test/data/regression/small_na.ref
+diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/small_na.new test/data/regression/small_na.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/test8000.new test/data/regression/test8000.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
