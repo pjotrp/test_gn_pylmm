@@ -19,10 +19,10 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno da
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis > test/data/regression/small_na.new
 [ $? -ne 0 ] && exit 1
 
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small.geno kinship > test/data/regression/k_small.new
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small.geno kinship --test-kinship > test/data/regression/k_small.new
 [ $? -ne 0 ] && exit 1
 
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small_na.geno kinship --maf-normalization > test/data/regression/k_small_na.new
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small_na.geno kinship --maf-normalization --test-kinship > test/data/regression/k_small_na.new
 [ $? -ne 0 ] && exit 1
 
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis > test/data/regression/test8000.new
