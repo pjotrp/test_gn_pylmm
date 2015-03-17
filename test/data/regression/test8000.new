@@ -40,7 +40,7 @@ call genotype.normalize
 call calculate_kinship_new
 CPU cores: 4
 8000 1000
-  Calculate Kinship took: 6.916193 seconds
+  Calculate Kinship took: 6.604332 seconds
 kinship_matrix:  array([[ 1.43484318,  1.43484318,  1.43484318, ...,  0.19234897,
          0.19234897,  0.19234897],
        [ 1.43484318,  1.43484318,  1.43484318, ...,  0.19234897,
@@ -115,12 +115,12 @@ self.Kve is:  (1217, 1217) array([[ -1.72820142e-01,   1.27669150e-01,  -4.05047
           2.38511863e-04,  -3.19729670e-02,   6.15621903e-03],
        [  3.60583481e-03,   7.61222626e-04,  -4.43891888e-03, ...,
           2.38511863e-04,  -3.19729670e-02,   6.15621903e-03]])
-  Doing GWAS took: 24.664320 seconds
+  Doing GWAS took: 24.096292 seconds
 
 Timing report
 
-[22%] Calculate Kinship: 6.91619300842
-[78%] Doing GWAS: 24.6643199921
+[22%] Calculate Kinship: 6.60433197021
+[78%] Doing GWAS: 24.0962920189
 
 [ 0.89840643  0.15251665  0.32440764 ...,  0.96206195  0.88271105
   0.96206195]

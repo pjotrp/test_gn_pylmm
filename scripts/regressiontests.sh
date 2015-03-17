@@ -34,6 +34,9 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno dat
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis --remove-missing-phenotypes > test/data/regression/test8000.new
 [ $? -ne 0 ] && exit 1
 
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis_new > test/data/regression/test8000_new.new
+[ $? -ne 0 ] && exit 1
+
 diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
@@ -53,4 +56,7 @@ diff test/data/regression/k_small_na.new test/data/regression/k_small_na.ref|gre
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/test8000.new test/data/regression/test8000.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/test8000_new.new test/data/regression/test8000_new.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
