@@ -44,7 +44,7 @@ REML= True  REFIT= False
 Starting benchmark: Calculate Kinship
 CPU cores: 4
 8000 1000
-  Calculate Kinship took: 6.664731 seconds
+  Calculate Kinship took: 6.697943 seconds
 kinship_matrix:  array([[ 1.45159733,  1.45159733,  1.45159733, ...,  0.19408389,
          0.19408389,  0.19408389],
        [ 1.45159733,  1.45159733,  1.45159733, ...,  0.19408389,
@@ -119,12 +119,12 @@ self.Kve is:  (1217, 1217) array([[ -1.25652092e-01,  -1.07838212e-01,   1.32618
           2.65508022e-04,  -3.19381403e-02,   6.25396858e-03],
        [ -1.29327846e-02,  -1.93058311e-02,  -8.95328534e-03, ...,
           2.65508022e-04,  -3.19381403e-02,   6.25396858e-03]])
-  Doing GWAS took: 23.371395 seconds
+  Doing GWAS took: 23.072924 seconds
 
 Timing report
 
-[22%] Calculate Kinship: 6.6647310257
-[78%] Doing GWAS: 23.3713948727
+[22%] Calculate Kinship: 6.69794297218
+[78%] Doing GWAS: 23.0729238987
 
 [ 0.89844227  0.15256061  0.32445092 ...,  0.96232158  0.88296896
   0.96232158]
