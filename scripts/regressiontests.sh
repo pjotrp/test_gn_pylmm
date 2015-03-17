@@ -16,7 +16,7 @@ fi
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno redis > test/data/regression/small.new
 [ $? -ne 0 ] && exit 1
 
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis > test/data/regression/small_na.new
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis --remove-missing-phenotypes > test/data/regression/small_na.new
 [ $? -ne 0 ] && exit 1
 
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno redis_new > test/data/regression/small2.new
@@ -28,10 +28,10 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno da
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small.geno kinship --test-kinship > test/data/regression/k_small.new
 [ $? -ne 0 ] && exit 1
 
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small_na.geno kinship --maf-normalization --test-kinship > test/data/regression/k_small_na.new
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small_na.geno kinship --maf-normalization --test-kinship --remove-missing-phenotypes > test/data/regression/k_small_na.new
 [ $? -ne 0 ] && exit 1
 
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis > test/data/regression/test8000.new
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis --remove-missing-phenotypes > test/data/regression/test8000.new
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
