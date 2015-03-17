@@ -19,6 +19,12 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno da
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis > test/data/regression/small_na.new
 [ $? -ne 0 ] && exit 1
 
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno redis_new > test/data/regression/small2.new
+[ $? -ne 0 ] && exit 1
+
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small_na.geno redis_new > test/data/regression/small_na2.new
+[ $? -ne 0 ] && exit 1
+
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small.geno kinship --test-kinship > test/data/regression/k_small.new
 [ $? -ne 0 ] && exit 1
 
@@ -32,6 +38,12 @@ diff test/data/regression/small.new test/data/regression/small.ref|grep -v secon
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/small_na.new test/data/regression/small_na.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/small2.new test/data/regression/small2.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/small_na2.new test/data/regression/small_na2.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/k_small.new test/data/regression/k_small.ref|grep -v seconds
