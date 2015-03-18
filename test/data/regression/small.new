@@ -1,8 +1,4 @@
 sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/']
-WARNING: Standalone version missing the Genenetwork2 environment
-
-WARNING: Standalone version missing the Genenetwork2 environment
-
 Command:  redis
 data/small.pheno
 (4,)
@@ -32,7 +28,7 @@ G (5, 4) =
   ...
   [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
   [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] ]
-  Calculate Kinship took: 0.012988 seconds
+  Calculate Kinship took: 0.013451 seconds
 kinship_matrix:  array([[ 0.794,  0.358, -0.442, -0.709],
        [ 0.358,  1.085, -0.297, -1.145],
        [-0.442, -0.297,  0.503,  0.236],
@@ -62,12 +58,12 @@ self.Kve is:  (4, 4) array([[ 0.5  , -0.391,  0.677, -0.373],
        [ 0.5  ,  0.576, -0.34 , -0.551],
        [ 0.5  , -0.592, -0.598,  0.205],
        [ 0.5  ,  0.407,  0.261,  0.718]])
-  Doing GWAS took: 0.027144 seconds
+  Doing GWAS took: 0.026261 seconds
 
 Timing report
 
-[32%] Calculate Kinship: 0.0129880905151
-[68%] Doing GWAS: 0.0271439552307
+[34%] Calculate Kinship: 0.0134510993958
+[66%] Doing GWAS: 0.0262608528137
 
 [ 0.071  0.703  0.765  0.703  0.142]
 5 2.38287395424

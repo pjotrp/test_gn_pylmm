@@ -1,8 +1,4 @@
 sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/']
-WARNING: Standalone version missing the Genenetwork2 environment
-
-WARNING: Standalone version missing the Genenetwork2 environment
-
 Command:  redis
 data/test8000.pheno
 (1219,)
@@ -45,7 +41,7 @@ G (8000, 1217) =
   ...
   [-1.8 -1.8 -1.8]  ...  [ 0.556  0.556  0.556] 
   [-1.772 -1.772 -1.772]  ...  [-1.772 -1.772 -1.772] ]
-  Calculate Kinship took: 6.988895 seconds
+  Calculate Kinship took: 6.906328 seconds
 kinship_matrix:  array([[ 1.435,  1.435,  1.435, ...,  0.192,  0.192,  0.192],
        [ 1.435,  1.435,  1.435, ...,  0.192,  0.192,  0.192],
        [ 1.435,  1.435,  1.435, ...,  0.192,  0.192,  0.192],
@@ -73,26 +69,26 @@ this K is: (1217, 1217) array([[ 1.435,  1.435,  1.435, ...,  0.192,  0.192,  0.
 Kva (1217,) =
  [-0. -0. -0.]  ...  [ 130.341  197.893  245.413]
 Kve (1217, 1217) =
-[ [-0.181  0.136  0.   ]  ...  [-0.03  -0.067 -0.018] 
-  [ 0.95  -0.047  0.008]  ...  [-0.03  -0.067 -0.018] 
+[ [-0.173  0.128 -0.041]  ...  [-0.03  -0.067 -0.018] 
+  [ 0.951 -0.071 -0.007]  ...  [-0.03  -0.067 -0.018] 
   ...
-  [ 0.005  0.007 -0.006]  ...  [ 0.    -0.032  0.006] 
-  [ 0.005  0.007 -0.006]  ...  [ 0.    -0.032  0.006] ]
-sum(Kva),sum(Kve)= 1201.964986 [ 0.137  0.681 -3.311 ...,  0.     0.    -0.   ]
+  [ 0.004  0.001 -0.004]  ...  [ 0.    -0.032  0.006] 
+  [ 0.004  0.001 -0.004]  ...  [ 0.    -0.032  0.006] ]
+sum(Kva),sum(Kve)= 1201.964986 [-0.09  -0.544  1.839 ...,  0.     0.     0.   ]
 self.Kva is:  (1217,) array([   0.   ,    0.   ,    0.   , ...,  130.341,  197.893,  245.413])
-self.Kve is:  (1217, 1217) array([[-0.181,  0.136,  0.   , ..., -0.03 , -0.067, -0.018],
-       [ 0.95 , -0.047,  0.008, ..., -0.03 , -0.067, -0.018],
-       [-0.022,  0.136, -0.717, ..., -0.03 , -0.067, -0.018],
+self.Kve is:  (1217, 1217) array([[-0.173,  0.128, -0.041, ..., -0.03 , -0.067, -0.018],
+       [ 0.951, -0.071, -0.007, ..., -0.03 , -0.067, -0.018],
+       [-0.015,  0.186,  0.66 , ..., -0.03 , -0.067, -0.018],
        ..., 
-       [ 0.005,  0.008, -0.005, ...,  0.   , -0.032,  0.006],
-       [ 0.005,  0.007, -0.006, ...,  0.   , -0.032,  0.006],
-       [ 0.005,  0.007, -0.006, ...,  0.   , -0.032,  0.006]])
-  Doing GWAS took: 24.865052 seconds
+       [ 0.004,  0.   , -0.002, ...,  0.   , -0.032,  0.006],
+       [ 0.004,  0.001, -0.004, ...,  0.   , -0.032,  0.006],
+       [ 0.004,  0.001, -0.004, ...,  0.   , -0.032,  0.006]])
+  Doing GWAS took: 21.461229 seconds
 
 Timing report
 
-[22%] Calculate Kinship: 6.98889517784
-[78%] Doing GWAS: 24.8650519848
+[24%] Calculate Kinship: 6.90632796288
+[76%] Doing GWAS: 21.4612288475
 
 [ 0.898  0.153  0.324 ...,  0.962  0.883  0.962]
-8000 4070.02327684
+8000 4070.02346579
