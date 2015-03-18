@@ -1,6 +1,8 @@
 sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/']
 WARNING: Standalone version missing the Genenetwork2 environment
 
+WARNING: Standalone version missing the Genenetwork2 environment
+
 Command:  kinship
 data/small.geno
 (5, 4)
@@ -25,29 +27,33 @@ first Kinship method (4, 4)
 call calculate_kinship_old
 genotype 2D matrix n (inds) is: 4
 genotype 2D matrix m (snps) is: 5
-After kinship (old) genotype_matrix:  array([[ 0.90453403,  1.        , -0.90453403,  1.        ,  0.57735027],
-       [ 0.90453403,  1.        ,  1.50755672,  1.        ,  0.57735027],
-       [-0.30151134, -1.        ,  0.30151134, -1.        ,  0.57735027],
-       [-1.50755672, -1.        , -0.90453403, -1.        , -1.73205081]])
+After kinship (old) genotype_matrix:  array([[ 0.905,  1.   , -0.905,  1.   ,  0.577],
+       [ 0.905,  1.   ,  1.508,  1.   ,  0.577],
+       [-0.302, -1.   ,  0.302, -1.   ,  0.577],
+       [-1.508, -1.   , -0.905, -1.   , -1.732]])
 Genotype (4, 5) 
-[[ 0.90453403  1.         -0.90453403  1.          0.57735027]
- [ 0.90453403  1.          1.50755672  1.          0.57735027]
- [-0.30151134 -1.          0.30151134 -1.          0.57735027]
- [-1.50755672 -1.         -0.90453403 -1.         -1.73205081]]
+[[ 0.905  1.    -0.905  1.     0.577]
+ [ 0.905  1.     1.508  1.     0.577]
+ [-0.302 -1.     0.302 -1.     0.577]
+ [-1.508 -1.    -0.905 -1.    -1.732]]
 GN2 Kinship method (4, 4) 
-[[ 0.79393939  0.35757576 -0.44242424 -0.70909091]
- [ 0.35757576  1.08484848 -0.2969697  -1.14545455]
- [-0.44242424 -0.2969697   0.5030303   0.23636364]
- [-0.70909091 -1.14545455  0.23636364  1.61818182]]
+[[ 0.794  0.358 -0.442 -0.709]
+ [ 0.358  1.085 -0.297 -1.145]
+ [-0.442 -0.297  0.503  0.236]
+ [-0.709 -1.145  0.236  1.618]]
 Genotype (4, 5) 
-[[ 0.90453403  1.         -0.90453403  1.          0.57735027]
- [ 0.90453403  1.          1.50755672  1.          0.57735027]
- [-0.30151134 -1.          0.30151134 -1.          0.57735027]
- [-1.50755672 -1.         -0.90453403 -1.         -1.73205081]]
-CPU cores: 4
-5 1000
+[[ 0.905  1.    -0.905  1.     0.577]
+ [ 0.905  1.     1.508  1.     0.577]
+ [-0.302 -1.     0.302 -1.     0.577]
+ [-1.508 -1.    -0.905 -1.    -1.732]]
+G (5, 4) =
+[ [ 0.905  0.905 -0.302]  ...  [ 0.905 -0.302 -1.508] 
+  [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
+  ...
+  [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
+  [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] ]
 third Kinship method (4, 4) 
-[[ 0.79393939  0.35757576 -0.44242424 -0.70909091]
- [ 0.35757576  1.08484848 -0.2969697  -1.14545455]
- [-0.44242424 -0.2969697   0.5030303   0.23636364]
- [-0.70909091 -1.14545455  0.23636364  1.61818182]]
+[[ 0.794  0.358 -0.442 -0.709]
+ [ 0.358  1.085 -0.297 -1.145]
+ [-0.442 -0.297  0.503  0.236]
+ [-0.709 -1.145  0.236  1.618]]
