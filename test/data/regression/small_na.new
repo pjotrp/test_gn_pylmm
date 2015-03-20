@@ -28,15 +28,13 @@ geno (4, 6) [[ 1.   1.   0.   1.   1.   1. ]
 Running the original LMM engine in run_other (old)
 REML= True  REFIT= False
 Starting benchmark: Calculate Kinship
-call genotype.normalize
-call calculate_kinship_new
 G (6, 4) =
 [ [ 0.905  0.905 -0.302]  ...  [ 0.905 -0.302 -1.508] 
   [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
   ...
   [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] 
   [ 0.707  0.707  0.   ]  ...  [ 0.707  0.    -1.414] ]
-  Calculate Kinship took: 0.013907 seconds
+  Calculate Kinship took: 0.013209 seconds
 kinship_matrix:  array([[ 0.745,  0.381, -0.369, -0.758],
        [ 0.381,  0.987, -0.247, -1.121],
        [-0.369, -0.247,  0.419,  0.197],
@@ -66,12 +64,12 @@ self.Kve is:  (4, 4) array([[ 0.5  , -0.391,  0.673, -0.38 ],
        [ 0.5  ,  0.61 , -0.316, -0.528],
        [ 0.5  , -0.585, -0.617,  0.167],
        [ 0.5  ,  0.366,  0.259,  0.741]])
-  Doing GWAS took: 0.026470 seconds
+  Doing GWAS took: 0.023473 seconds
 
 Timing report
 
-[34%] Calculate Kinship: 0.013906955719
-[66%] Doing GWAS: 0.0264699459076
+[36%] Calculate Kinship: 0.0132088661194
+[64%] Doing GWAS: 0.0234730243683
 
 [ 0.09   0.724  0.733  0.724  0.179  0.041]
 6 2.48911996242
