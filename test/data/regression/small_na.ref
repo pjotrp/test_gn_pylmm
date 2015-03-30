@@ -1,4 +1,4 @@
-sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/']
+sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/', '/home/danny/GeneNetwork/wqflask/wqflask/my_pylmm/pyLMM/']
 Command:  redis
 data/small.pheno
 (4,)
@@ -19,7 +19,6 @@ Removed missing phenotypes (6, 4)
  [ 1.   1.   1.   0. ]
  [ 1.   1.   nan  0. ]]
 Loading Redis from parsed data
-kinship None
 pheno [ 0.578  0.196 -0.521 -1.912]
 geno (4, 6) [[ 1.   1.   0.   1.   1.   1. ]
  [ 1.   1.   1.   1.   1.   1. ]
@@ -28,15 +27,13 @@ geno (4, 6) [[ 1.   1.   0.   1.   1.   1. ]
 Running the original LMM engine in run_other (old)
 REML= True  REFIT= False
 Starting benchmark: Calculate Kinship
-call genotype.normalize
-call calculate_kinship_new
 G (6, 4) =
 [ [ 0.905  0.905 -0.302]  ...  [ 0.905 -0.302 -1.508] 
   [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
   ...
   [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] 
   [ 0.707  0.707  0.   ]  ...  [ 0.707  0.    -1.414] ]
-  Calculate Kinship took: 0.016856 seconds
+  Calculate Kinship took: 0.013159 seconds
 kinship_matrix:  array([[ 0.745,  0.381, -0.369, -0.758],
        [ 0.381,  0.987, -0.247, -1.121],
        [-0.369, -0.247,  0.419,  0.197],
@@ -66,12 +63,12 @@ self.Kve is:  (4, 4) array([[ 0.5  , -0.391,  0.673, -0.38 ],
        [ 0.5  ,  0.61 , -0.316, -0.528],
        [ 0.5  , -0.585, -0.617,  0.167],
        [ 0.5  ,  0.366,  0.259,  0.741]])
-  Doing GWAS took: 0.029229 seconds
+  Doing GWAS took: 0.023443 seconds
 
 Timing report
 
-[37%] Calculate Kinship: 0.0168559551239
-[63%] Doing GWAS: 0.0292291641235
+[36%] Calculate Kinship: 0.0131587982178
+[64%] Doing GWAS: 0.0234429836273
 
 [ 0.09   0.724  0.733  0.724  0.179  0.041]
 6 2.48911996242
