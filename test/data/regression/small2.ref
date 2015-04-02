@@ -26,7 +26,7 @@ G (5, 4) =
   ...
   [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
   [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] ]
-  Calculate Kinship took: 0.011913 seconds
+  Calculate Kinship took: 0.014120 seconds
 kinship_matrix:  array([[ 0.794,  0.358, -0.442, -0.709],
        [ 0.358,  1.085, -0.297, -1.145],
        [-0.442, -0.297,  0.503,  0.236],
@@ -61,12 +61,12 @@ Before sort (1,) =
  [1]  ...  [1]
 After sort (1,) =
  [1]  ...  [1]
-  Doing GWAS took: 0.029378 seconds
+  Doing GWAS took: 0.030657 seconds
 
 Timing report
 
-[29%] Calculate Kinship: 0.0119128227234
-[71%] Doing GWAS: 0.0293779373169
+[32%] Calculate Kinship: 0.0141201019287
+[68%] Doing GWAS: 0.0306570529938
 
 [ 0.071  0.703  0.765  0.703  0.142]
 5 2.38287395424
