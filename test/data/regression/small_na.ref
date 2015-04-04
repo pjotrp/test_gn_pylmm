@@ -19,6 +19,10 @@ Removed missing phenotypes (6, 4)
  [ 1.   1.   1.   0. ]
  [ 1.   1.   nan  0. ]]
 Loading Redis from parsed data
+pheno_vector
+kinship_matrix
+genotype_matrix
+covariate_matrix
 pheno [ 0.578  0.196 -0.521 -1.912]
 geno (4, 6) [[ 1.   1.   0.   1.   1.   1. ]
  [ 1.   1.   1.   1.   1.   1. ]
@@ -33,7 +37,7 @@ G (6, 4) =
   ...
   [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] 
   [ 0.707  0.707  0.   ]  ...  [ 0.707  0.    -1.414] ]
-  Calculate Kinship took: 0.012975 seconds
+  Calculate Kinship took: 0.014497 seconds
 kinship_matrix:  array([[ 0.745,  0.381, -0.369, -0.758],
        [ 0.381,  0.987, -0.247, -1.121],
        [-0.369, -0.247,  0.419,  0.197],
@@ -63,12 +67,12 @@ self.Kve is:  (4, 4) array([[ 0.5  , -0.391,  0.673, -0.38 ],
        [ 0.5  ,  0.61 , -0.316, -0.528],
        [ 0.5  , -0.585, -0.617,  0.167],
        [ 0.5  ,  0.366,  0.259,  0.741]])
-  Doing GWAS took: 0.024885 seconds
+  Doing GWAS took: 0.023454 seconds
 
 Timing report
 
-[34%] Calculate Kinship: 0.0129752159119
-[66%] Doing GWAS: 0.0248849391937
+[38%] Calculate Kinship: 0.0144970417023
+[62%] Doing GWAS: 0.023453950882
 
 [ 0.09   0.724  0.733  0.724  0.179  0.041]
 6 2.48911996242

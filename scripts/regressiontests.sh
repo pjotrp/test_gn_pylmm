@@ -46,6 +46,9 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno da
 diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
+diff test/data/regression/small_run.new test/data/regression/small_run.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
 diff test/data/regression/small_na.new test/data/regression/small_na.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
@@ -59,6 +62,9 @@ diff test/data/regression/k_small.new test/data/regression/k_small.ref|grep -v s
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/k_small_na.new test/data/regression/k_small_na.ref|grep -v seconds
+[ $? -ne 0 ] && exit 1
+
+diff test/data/regression/test8000_run.new test/data/regression/test8000_run.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/test8000.new test/data/regression/test8000.ref|grep -v seconds
