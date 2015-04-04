@@ -1,6 +1,6 @@
 sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/', '/home/danny/GeneNetwork/wqflask/wqflask/my_pylmm/pyLMM/']
 Command:  redis_new
-data/small.pheno
+data/small_na.pheno
 (4,)
 data/small_na.geno
 (6, 4)
@@ -11,67 +11,73 @@ Original G (6, 4)
  [ 1.   1.   0.   0. ]
  [ 1.   1.   1.   0. ]
  [ 1.   1.   nan  0. ]]
-Loading Redis from parsed data
-pheno_vector
 kinship_matrix
 genotype_matrix
+pheno_vector
 covariate_matrix
-pheno [ 0.578  0.196 -0.521 -1.912]
-geno (4, 6) [[ 1.   1.   0.   1.   1.   1. ]
- [ 1.   1.   1.   1.   1.   1. ]
- [ 0.5  0.   0.5  0.   1.   nan]
- [ 0.   0.   0.   0.   0.   0. ]]
+pheno [ 0.578    nan -0.521 -1.912]
+geno (6, 4) [[ 1.   1.   0.5  0. ]
+ [ 1.   1.   0.   0. ]
+ [ 0.   1.   0.5  0. ]
+ [ 1.   1.   0.   0. ]
+ [ 1.   1.   1.   0. ]
+ [ 1.   1.   nan  0. ]]
 Running the new LMM2 engine in run_other_new
 REML= True  REFIT= False
-Removed missing phenotypes (4,)
 Starting benchmark: Calculate Kinship
-G (6, 4) =
-[ [ 0.905  0.905 -0.302]  ...  [ 0.905 -0.302 -1.508] 
-  [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
+G (6, 3) =
+[ [ 1.   0.5  0. ]  ...  [ 1.   0.5  0. ] 
+  [ 1.  0.  0.]  ...  [ 1.  0.  0.] 
   ...
-  [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] 
-  [ 0.707  0.707  0.   ]  ...  [ 0.707  0.    -1.414] ]
-  Calculate Kinship took: 0.014367 seconds
-kinship_matrix:  array([[ 0.745,  0.381, -0.369, -0.758],
-       [ 0.381,  0.987, -0.247, -1.121],
-       [-0.369, -0.247,  0.419,  0.197],
-       [-0.758, -1.121,  0.197,  1.682]])
-kinship_matrix.shape:  (4, 4)
-run_other_new genotype_matrix:  (4, 6)
-[[ 0.905  1.    -0.905  1.     0.577  0.707]
- [ 0.905  1.     1.508  1.     0.577  0.707]
- [-0.302 -1.     0.302 -1.     0.577  0.   ]
- [-1.508 -1.    -0.905 -1.    -1.732 -1.414]]
+  [ 1.  1.  0.]  ...  [ 1.  1.  0.] 
+  [  1.  nan   0.]  ...  [  1.  nan   0.] ]
+G (6, 3) =
+[ [ 1.225  0.    -1.225]  ...  [ 1.225  0.    -1.225] 
+  [ 1.414 -0.707 -0.707]  ...  [ 1.414 -0.707 -0.707] 
+  ...
+  [ 0.707  0.707 -1.414]  ...  [ 0.707  0.707 -1.414] 
+  [ 1.  0. -1.]  ...  [ 1.  0. -1.] ]
+  Calculate Kinship took: 0.016673 seconds
+kinship_matrix:  array([[ 1.25 , -0.417, -0.833],
+       [-0.417,  0.583, -0.167],
+       [-0.833, -0.167,  1.   ]])
+kinship_matrix.shape:  (3, 3)
+run_other_new genotype_matrix:  (6, 3)
+[[ 1.225  0.    -1.225]
+ [ 1.414 -0.707 -0.707]
+ [-0.707  1.414 -0.707]
+ [ 1.414 -0.707 -0.707]
+ [ 0.707  0.707 -1.414]
+ [ 1.     0.    -1.   ]]
 Starting benchmark: Doing GWAS
-G (6, 4) =
-[ [ 0.905  0.905 -0.302]  ...  [ 0.905 -0.302 -1.508] 
-  [ 1.  1. -1.]  ...  [ 1. -1. -1.] 
+G (6, 3) =
+[ [ 1.225  0.    -1.225]  ...  [ 1.225  0.    -1.225] 
+  [ 1.414 -0.707 -0.707]  ...  [ 1.414 -0.707 -0.707] 
   ...
-  [ 0.577  0.577  0.577]  ...  [ 0.577  0.577 -1.732] 
-  [ 0.707  0.707  0.   ]  ...  [ 0.707  0.    -1.414] ]
-('this K is:', (4, 4), array([[ 0.745,  0.381, -0.369, -0.758],
-       [ 0.381,  0.987, -0.247, -1.121],
-       [-0.369, -0.247,  0.419,  0.197],
-       [-0.758, -1.121,  0.197,  1.682]]))
-Kva (4,) =
- [ 0.     0.308  0.612]  ...  [ 0.308  0.612  2.914]
-Kve (4, 4) =
-[ [ 0.5   -0.391  0.673]  ...  [-0.391  0.673 -0.38 ] 
-  [ 0.5    0.61  -0.316]  ...  [ 0.61  -0.316 -0.528] 
+  [ 0.707  0.707 -1.414]  ...  [ 0.707  0.707 -1.414] 
+  [ 1.  0. -1.]  ...  [ 1.  0. -1.] ]
+('this K is:', (3, 3), array([[ 1.25 , -0.417, -0.833],
+       [-0.417,  0.583, -0.167],
+       [-0.833, -0.167,  1.   ]]))
+Kva (3,) =
+ [ 0.     0.833  2.   ]  ...  [ 0.     0.833  2.   ]
+Kve (3, 3) =
+[ [-0.577  0.267  0.772]  ...  [-0.577  0.267  0.772] 
+  [-0.577 -0.802 -0.154]  ...  [-0.577 -0.802 -0.154] 
   ...
-  [ 0.5   -0.585 -0.617]  ...  [-0.585 -0.617  0.167] 
-  [ 0.5    0.366  0.259]  ...  [ 0.366  0.259  0.741] ]
-('sum(Kva),sum(Kve)=', 3.8333333333333295, array([ 2.,  0.,  0.,  0.]))
+  [-0.577 -0.802 -0.154]  ...  [-0.577 -0.802 -0.154] 
+  [-0.577  0.535 -0.617]  ...  [-0.577  0.535 -0.617] ]
+('sum(Kva),sum(Kve)=', 2.8333333333333357, array([-1.732, -0.   ,  0.   ]))
 Before sort (1,) =
  [1]  ...  [1]
 After sort (1,) =
  [1]  ...  [1]
-  Doing GWAS took: 0.029315 seconds
+  Doing GWAS took: 0.028086 seconds
 
 Timing report
 
-[33%] Calculate Kinship: 0.0143668651581
-[67%] Doing GWAS: 0.029314994812
+[37%] Calculate Kinship: 0.0166728496552
+[63%] Doing GWAS: 0.0280859470367
 
-[ 0.09   0.724  0.733  0.724  0.179  0.041]
-6 2.48911996242
+[ 0.062  0.558  0.833  0.558  0.345  0.062]
+6 2.41940200508
