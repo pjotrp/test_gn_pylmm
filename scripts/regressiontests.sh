@@ -13,7 +13,7 @@ if [ ! -d $pylmm_lib_path ]; then
     exit 1
 fi
 
-env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno run > test/data/regression/run.new
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno run > test/data/regression/small_run.new
 [ $? -ne 0 ] && exit 1
 
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno redis > test/data/regression/small.new
