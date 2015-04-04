@@ -13,6 +13,9 @@ if [ ! -d $pylmm_lib_path ]; then
     exit 1
 fi
 
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno run > test/data/regression/run.new
+[ $? -ne 0 ] && exit 1
+
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/small.pheno --geno data/small.geno redis > test/data/regression/small.new
 [ $? -ne 0 ] && exit 1
 
@@ -29,6 +32,9 @@ env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno dat
 [ $? -ne 0 ] && exit 1
 
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --geno data/small_na.geno kinship --maf-normalization --test-kinship > test/data/regression/k_small_na.new
+[ $? -ne 0 ] && exit 1
+
+env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno run > test/data/regression/test8000_run.new
 [ $? -ne 0 ] && exit 1
 
 env PYTHONPATH=$pylmm_lib_path:./lib python $pylmm_lib_path/runlmm.py --pheno data/test8000.pheno --geno data/test8000.geno redis --remove-missing-phenotypes > test/data/regression/test8000.new
