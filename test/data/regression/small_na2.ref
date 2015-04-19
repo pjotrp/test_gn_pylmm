@@ -1,4 +1,3 @@
-sys.path2: ['/export/local/users/wrk/izip/git/opensource/python/gn2/wqflask/wqflask/my_pylmm/pyLMM', '/usr/local/lib/python2.7/dist-packages/setuptools-1.1.6-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/matplotlib_venn-0.9-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/googlecl-0.9.14-py2.7.egg', '/usr/local/lib/python2.7/dist-packages/gdata-2.0.18-py2.7.egg', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/my_pylmm/pyLMM', '/export/local/users/wrk/izip/git/opensource/python/test_gn_pylmm/lib', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/zas1024/gene/wqflask/', '/home/danny/GeneNetwork/wqflask/wqflask/my_pylmm/pyLMM/']
 Command:  redis_new
 data/small_na.pheno
 (4,)
@@ -11,10 +10,12 @@ Original G (6, 4)
  [ 1.   1.   0.   0. ]
  [ 1.   1.   1.   0. ]
  [ 1.   1.   nan  0. ]]
-kinship_matrix
-genotype_matrix
-pheno_vector
-covariate_matrix
+geno (6, 4) =
+[ [ 1.   1.   0.5]  ...  [ 1.   0.5  0. ] 
+  [ 1.  1.  0.]  ...  [ 1.  0.  0.] 
+  ...
+  [ 1.  1.  1.]  ...  [ 1.  1.  0.] 
+  [  1.   1.  nan]  ...  [  1.  nan   0.] ]
 pheno [ 0.578    nan -0.521 -1.912]
 geno (6, 4) [[ 1.   1.   0.5  0. ]
  [ 1.   1.   0.   0. ]
@@ -37,7 +38,7 @@ G (6, 3) =
   ...
   [ 0.707  0.707 -1.414]  ...  [ 0.707  0.707 -1.414] 
   [ 1.  0. -1.]  ...  [ 1.  0. -1.] ]
-  Calculate Kinship took: 0.016673 seconds
+  Calculate Kinship took: 0.012913 seconds
 kinship_matrix:  array([[ 1.25 , -0.417, -0.833],
        [-0.417,  0.583, -0.167],
        [-0.833, -0.167,  1.   ]])
@@ -72,12 +73,12 @@ Before sort (1,) =
  [1]  ...  [1]
 After sort (1,) =
  [1]  ...  [1]
-  Doing GWAS took: 0.028086 seconds
+  Doing GWAS took: 0.034367 seconds
 
 Timing report
 
-[37%] Calculate Kinship: 0.0166728496552
-[63%] Doing GWAS: 0.0280859470367
+[27%] Calculate Kinship: 0.0129129886627
+[73%] Doing GWAS: 0.0343668460846
 
 [ 0.062  0.558  0.833  0.558  0.345  0.062]
 6 2.41940200508
