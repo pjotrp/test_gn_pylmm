@@ -3,6 +3,7 @@ data/small_na.pheno
 (4,)
 data/small_na.geno
 (6, 4)
+{'noCUDA': False, 'testing': False, 'verbose': True, 'remove_missing_phenotypes': True, 'geno': 'data/small_na.geno', 'numThreads': None, 'maf_normalization': False, 'useBLAS': False, 'pheno': 'data/small_na.pheno', 'test_kinship': False, 'noBLAS': False, 'saveKvaKve': False, 'debug': False, 'genotype_normalization': False, 'kinship': None}
 Original G (6, 4) 
 [[ 1.   1.   0.5  0. ]
  [ 1.   1.   0.   0. ]
@@ -22,7 +23,8 @@ geno (6, 3) =
   [ 1.  0.  0.]  ...  [ 1.  0.  0.] 
   ...
   [ 1.  1.  0.]  ...  [ 1.  1.  0.] 
-  [  1.  nan   0.]  ...  [  1.  nan   0.] ]
+  [  1.  nan   0.]  ...  [  1.  nan   0.] ] strides:  (8, 48) 
+
 pheno [ 0.578 -0.521 -1.912]
 geno (6, 3) [[ 1.   0.5  0. ]
  [ 1.   0.   0. ]
@@ -38,14 +40,16 @@ G (6, 3) =
   [ 1.  0.  0.]  ...  [ 1.  0.  0.] 
   ...
   [ 1.  1.  0.]  ...  [ 1.  1.  0.] 
-  [  1.  nan   0.]  ...  [  1.  nan   0.] ]
-G (6, 3) =
-[ [ 1.225  0.    -1.225]  ...  [ 1.225  0.    -1.225] 
-  [ 1.414 -0.707 -0.707]  ...  [ 1.414 -0.707 -0.707] 
+  [  1.  nan   0.]  ...  [  1.  nan   0.] ] strides:  (8, 48) 
+
+kinship_full K (3, 3) =
+[ [ 1.25  -0.417 -0.833]  ...  [ 1.25  -0.417 -0.833] 
+  [-0.417  0.583 -0.167]  ...  [-0.417  0.583 -0.167] 
   ...
-  [ 0.707  0.707 -1.414]  ...  [ 0.707  0.707 -1.414] 
-  [ 1.  0. -1.]  ...  [ 1.  0. -1.] ]
-  Calculate Kinship took: 0.015095 seconds
+  [-0.417  0.583 -0.167]  ...  [-0.417  0.583 -0.167] 
+  [-0.833 -0.167  1.   ]  ...  [-0.833 -0.167  1.   ] ] strides:  (24, 8) 
+
+  Calculate Kinship took: 0.004722 seconds
 kinship_matrix:  array([[ 1.25 , -0.417, -0.833],
        [-0.417,  0.583, -0.167],
        [-0.833, -0.167,  1.   ]])
@@ -68,18 +72,11 @@ Kve (3, 3) =
   [-0.577 -0.802 -0.154]  ...  [-0.577 -0.802 -0.154] 
   ...
   [-0.577 -0.802 -0.154]  ...  [-0.577 -0.802 -0.154] 
-  [-0.577  0.535 -0.617]  ...  [-0.577  0.535 -0.617] ]
+  [-0.577  0.535 -0.617]  ...  [-0.577  0.535 -0.617] ] strides:  (8, 24) 
+
 sum(Kva),sum(Kve)= 2.83333333333 [-1.732 -0.     0.   ]
 self.Kva is:  (3,) array([ 0.   ,  0.833,  2.   ])
 self.Kve is:  (3, 3) array([[-0.577,  0.267,  0.772],
        [-0.577, -0.802, -0.154],
        [-0.577,  0.535, -0.617]])
-  Doing GWAS took: 0.029428 seconds
-
-Timing report
-
-[34%] Calculate Kinship: 0.0150949954987
-[66%] Doing GWAS: 0.0294280052185
-
-[ 0.062  0.558  0.833  0.558  0.345  0.062]
-6 2.41940200508
+  Doing GWAS took: 0.018434 seconds
