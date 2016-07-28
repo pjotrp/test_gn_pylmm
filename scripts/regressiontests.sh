@@ -7,7 +7,7 @@
 
 pylmm_path=pylmm_gn2
 pylmm_lib_path=pylmm_gn2/pylmm_gn2:../scikits.cuda
-runlmm="env PYTHONPATH=$pylmm_lib_path python $pylmm_path/bin/runlmm.py"
+runlmm="env PYTHONPATH="$pylmm_lib_path:$PYTHONPATH" python $pylmm_path/bin/runlmm.py"
 
 echo "small_run.new"
 $runlmm --pheno data/small.pheno --geno data/small.geno run > test/data/regression/small_run.new
