@@ -13,6 +13,11 @@ echo "small_run.new"
 $runlmm --pheno data/small.pheno --geno data/small.geno run > test/data/regression/small_run.new
 [ $? -ne 0 ] && exit 1
 
+echo "small_run_na.new"
+$runlmm --pheno data/small_na.pheno --geno data/small_na.geno run > test/data/regression/small_run_na.new
+[ $? -ne 0 ] && exit 1
+
+
 # echo "small.new"
 # $runlmm --pheno data/small.pheno --geno data/small.geno redis > test/data/regression/small.new
 # [ $? -ne 0 ] && exit 1
@@ -45,24 +50,27 @@ $runlmm --pheno data/test8000.pheno --geno data/test8000.geno run > test/data/re
 # $runlmm --pheno data/test8000.pheno --geno data/test8000.geno redis --remove-missing-phenotypes > test/data/regression/test8000.new
 # [ $? -ne 0 ] && exit 1
 
-echo "test8000_new.new"
+# echo "test8000_new.new"
 # $runlmm --pheno data/test8000.pheno --geno data/test8000.geno redis_new > test/data/regression/test8000_new.new
-[ $? -ne 0 ] && exit 1
+# [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
+# diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/small_run.new test/data/regression/small_run.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/small_na.new test/data/regression/small_na.ref|grep -v seconds
+diff test/data/regression/small_run_na.new test/data/regression/small_run_na.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/small2.new test/data/regression/small2.ref|grep -v seconds
-[ $? -ne 0 ] && exit 1
+# diff test/data/regression/small_na.new test/data/regression/small_na.ref|grep -v seconds
+# [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/small_na2.new test/data/regression/small_na2.ref|grep -v seconds
-[ $? -ne 0 ] && exit 1
+# diff test/data/regression/small2.new test/data/regression/small2.ref|grep -v seconds
+# [ $? -ne 0 ] && exit 1
+
+# diff test/data/regression/small_na2.new test/data/regression/small_na2.ref|grep -v seconds
+# [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/k_small.new test/data/regression/k_small.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
@@ -73,11 +81,11 @@ diff test/data/regression/k_small_na.new test/data/regression/k_small_na.ref|gre
 diff test/data/regression/test8000_run.new test/data/regression/test8000_run.ref|grep -v seconds
 [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/test8000.new test/data/regression/test8000.ref|grep -v seconds
-[ $? -ne 0 ] && exit 1
+# diff test/data/regression/test8000.new test/data/regression/test8000.ref|grep -v seconds
+# [ $? -ne 0 ] && exit 1
 
-diff test/data/regression/test8000_new.new test/data/regression/test8000_new.ref|grep -v seconds
-[ $? -ne 0 ] && exit 1
+# diff test/data/regression/test8000_new.new test/data/regression/test8000_new.ref|grep -v seconds
+# [ $? -ne 0 ] && exit 1
 
 echo "rename 's/.new/.ref/' test/data/regression/*.new -f"
 
