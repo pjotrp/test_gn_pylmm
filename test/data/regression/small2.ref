@@ -1,9 +1,11 @@
 Command:  redis_new
 data/small.pheno
+['1']
 (5,)
 data/small.geno
+['1', '2', '3', '4', '5']
 (6, 5)
-{'noCUDA': False, 'testing': False, 'verbose': True, 'remove_missing_phenotypes': False, 'geno': 'data/small.geno', 'numThreads': None, 'maf_normalization': False, 'useBLAS': False, 'pheno': 'data/small.pheno', 'test_kinship': False, 'noBLAS': False, 'saveKvaKve': False, 'debug': False, 'genotype_normalization': False, 'kinship': None}
+{'control': None, 'noCUDA': False, 'maf_normalization': False, 'verbose': True, 'remove_missing_phenotypes': False, 'geno': 'data/small.geno', 'numThreads': None, 'testing': False, 'useBLAS': False, 'pheno': 'data/small.pheno', 'noBLAS': False, 'saveKvaKve': False, 'debug': False, 'kinship': None, 'genotype_normalization': False, 'test_kinship': False}
 Original G (6, 5) 
 [[ 1.   1.   0.5  0.   1. ]
  [ 1.   1.   0.   0.   0. ]
@@ -18,77 +20,7 @@ geno (6, 5) =
   [ 1.  1.  1.]  ...  [ 1.  0.  1.] 
   [ 1.   1.   0.5]  ...  [ 0.5  0.   1. ] ] strides:  (8, 48) 
 
-pheno [ 0.578  0.196 -0.521 -1.912 -1.912]
-geno (6, 5) [[ 1.   1.   0.5  0.   1. ]
- [ 1.   1.   0.   0.   0. ]
- [ 0.   1.   0.5  0.   1. ]
- [ 1.   1.   0.   0.   0. ]
- [ 1.   1.   1.   0.   1. ]
- [ 1.   1.   0.5  0.   1. ]]
-Running the new LMM2 engine in run_other_new
-REML= True  REFIT= False
-Starting benchmark: Calculate Kinship
-G (6, 5) =
-[ [ 1.   1.   0.5]  ...  [ 0.5  0.   1. ] 
-  [ 1.  1.  0.]  ...  [ 0.  0.  0.] 
-  ...
-  [ 1.  1.  1.]  ...  [ 1.  0.  1.] 
-  [ 1.   1.   0.5]  ...  [ 0.5  0.   1. ] ] strides:  (8, 48) 
-
-kinship_full K (5, 5) =
-[ [ 0.938  0.521 -0.417]  ...  [-0.417 -0.729 -0.312] 
-  [ 0.521  0.938 -0.417]  ...  [-0.417 -1.146  0.104] 
-  ...
-  [-0.729 -1.146  0.347]  ...  [ 0.347  2.118 -0.59 ] 
-  [-0.312  0.104  0.139]  ...  [ 0.139 -0.59   0.66 ] ] strides:  (40, 8) 
-
-  Calculate Kinship took: 0.009213 seconds
-kinship_matrix:  array([[ 0.938,  0.521, -0.417, -0.729, -0.312],
-       [ 0.521,  0.938, -0.417, -1.146,  0.104],
-       [-0.417, -0.417,  0.347,  0.347,  0.139],
-       [-0.729, -1.146,  0.347,  2.118, -0.59 ],
-       [-0.312,  0.104,  0.139, -0.59 ,  0.66 ]])
-kinship_matrix.shape:  (5, 5)
-run_other_new genotype_matrix:  (6, 5)
-[[ 0.75   0.75  -0.5   -1.75   0.75 ]
- [ 1.225  1.225 -0.816 -0.816 -0.816]
- [-1.118  1.118  0.    -1.118  1.118]
- [ 1.225  1.225 -0.816 -0.816 -0.816]
- [ 0.5    0.5    0.5   -2.     0.5  ]
- [ 0.75   0.75  -0.5   -1.75   0.75 ]]
-Starting benchmark: Doing GWAS
-G (6, 5) =
-[ [ 0.75  0.75 -0.5 ]  ...  [-0.5  -1.75  0.75] 
-  [ 1.225  1.225 -0.816]  ...  [-0.816 -0.816 -0.816] 
-  ...
-  [ 0.5  0.5  0.5]  ...  [ 0.5 -2.   0.5] 
-  [ 0.75  0.75 -0.5 ]  ...  [-0.5  -1.75  0.75] ] strides:  (40, 8) 
-
-('this K is:', (5, 5), array([[ 0.938,  0.521, -0.417, -0.729, -0.312],
-       [ 0.521,  0.938, -0.417, -1.146,  0.104],
-       [-0.417, -0.417,  0.347,  0.347,  0.139],
-       [-0.729, -1.146,  0.347,  2.118, -0.59 ],
-       [-0.312,  0.104,  0.139, -0.59 ,  0.66 ]]))
-Kva (5,) =
- [-0.   0.1  0.3]  ...  [ 0.3    1.241  3.359]
-Kve (5, 5) =
-[ [-0.447  0.203  0.535]  ...  [ 0.535  0.592 -0.351] 
-  [-0.447 -0.263 -0.701]  ...  [-0.701  0.102 -0.479] 
-  ...
-  [-0.447  0.214 -0.277]  ...  [-0.277  0.295  0.768] 
-  [-0.447  0.568  0.068]  ...  [ 0.068 -0.674 -0.136] ] strides:  (8, 40) 
-
-('sum(Kva),sum(Kve)=', 5.0000009999999913, array([-2.236,  0.   , -0.   ,  0.   ,  0.   ]))
-Before sort (1,) =
- [1]  ...  [1]
-After sort (1,) =
- [1]  ...  [1]
-  Doing GWAS took: 0.101328 seconds
-
-Timing report
-
-[8%] Calculate Kinship: 0.00921297073364
-[92%] Doing GWAS: 0.101328134537
-
-[ 0.739  0.161  0.653  0.161  0.398  0.739]
-6 2.85063995275
+pheno 5 [ 0.578  0.196 -0.521 -1.912 -1.912]
+(6, 5)
+No kinship matrix passed in!
+6 (6, 5)

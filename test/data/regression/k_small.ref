@@ -1,7 +1,8 @@
 Command:  kinship
 data/small.geno
+['1', '2', '3', '4', '5']
 (6, 5)
-{'noCUDA': False, 'testing': False, 'verbose': True, 'remove_missing_phenotypes': False, 'geno': 'data/small.geno', 'numThreads': None, 'maf_normalization': False, 'useBLAS': False, 'pheno': None, 'test_kinship': True, 'noBLAS': False, 'saveKvaKve': False, 'debug': False, 'genotype_normalization': False, 'kinship': None}
+{'control': None, 'noCUDA': False, 'maf_normalization': False, 'verbose': True, 'remove_missing_phenotypes': False, 'geno': 'data/small.geno', 'numThreads': None, 'testing': False, 'useBLAS': False, 'pheno': None, 'noBLAS': False, 'saveKvaKve': False, 'debug': False, 'kinship': None, 'genotype_normalization': False, 'test_kinship': True}
 Original G (6, 5) 
 [[ 1.   1.   0.5  0.   1. ]
  [ 1.   1.   0.   0.   0. ]
@@ -70,6 +71,7 @@ G (6, 5) =
   [ 0.5  0.5  0.5]  ...  [ 0.5 -2.   0.5] 
   [ 0.75  0.75 -0.5 ]  ...  [-0.5  -1.75  0.75] ] strides:  (40, 8) 
 
+WARNING: less snps than inds (6 snps, 5 inds)
 third Kinship method (5, 5) 
 [[ 0.938  0.521 -0.417 -0.729 -0.312]
  [ 0.521  0.938 -0.417 -1.146  0.104]

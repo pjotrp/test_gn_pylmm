@@ -33,7 +33,7 @@ G (6, 3) =
   [ 1.  0.  0.]  ...  [ 1.  0.  0.] 
   ...
   [ 1.  1.  0.]  ...  [ 1.  1.  0.] 
-  [  1.  nan   0.]  ...  [  1.  nan   0.] ] strides:  (8, 48) 
+  [  1.  nan   0.]  ...  [  1.  nan   0.] ] strides:  (24, 8) 
 
 kinship_full K (3, 3) =
 [ [ 1.25  -0.417 -0.833]  ...  [ 1.25  -0.417 -0.833] 
@@ -42,7 +42,7 @@ kinship_full K (3, 3) =
   [-0.417  0.583 -0.167]  ...  [-0.417  0.583 -0.167] 
   [-0.833 -0.167  1.   ]  ...  [-0.833 -0.167  1.   ] ] strides:  (24, 8) 
 
-  Calculate Kinship took: 0.006092 seconds
+  Calculate Kinship took: 0.002447 seconds
 kinship_matrix:  array([[ 1.25 , -0.417, -0.833],
        [-0.417,  0.583, -0.167],
        [-0.833, -0.167,  1.   ]])
@@ -79,12 +79,12 @@ Before sort (1,) =
  [1]  ...  [1]
 After sort (1,) =
  [1]  ...  [1]
-  Doing GWAS took: 0.118099 seconds
+  Doing GWAS took: 0.032447 seconds
 
 Timing report
 
-[5%] Calculate Kinship: 0.0060920715332
-[95%] Doing GWAS: 0.118098974228
+[7%] Calculate Kinship: 0.00244688987732 sec.
+[93%] Doing GWAS: 0.0324470996857 sec.
 
 [ 0.062  0.558  0.833  0.558  0.345  0.062]
 6 2.41940200508

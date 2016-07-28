@@ -22,11 +22,11 @@ $runlmm --pheno data/small.pheno --geno data/small.geno run > test/data/regressi
 # [ $? -ne 0 ] && exit 1
 
 echo "small2.new"
-$runlmm --pheno data/small.pheno --geno data/small.geno redis_new > test/data/regression/small2.new
+# $runlmm --pheno data/small.pheno --geno data/small.geno redis_new > test/data/regression/small2.new
 [ $? -ne 0 ] && exit 1
 
 echo "small_na2.new"
-$runlmm --pheno data/small_na.pheno --geno data/small_na.geno redis_new > test/data/regression/small_na2.new
+# $runlmm --pheno data/small_na.pheno --geno data/small_na.geno redis_new > test/data/regression/small_na2.new
 [ $? -ne 0 ] && exit 1
 
 echo "k_small.new"
@@ -46,7 +46,7 @@ $runlmm --pheno data/test8000.pheno --geno data/test8000.geno run > test/data/re
 # [ $? -ne 0 ] && exit 1
 
 echo "test8000_new.new"
-$runlmm --pheno data/test8000.pheno --geno data/test8000.geno redis_new > test/data/regression/test8000_new.new
+# $runlmm --pheno data/test8000.pheno --geno data/test8000.geno redis_new > test/data/regression/test8000_new.new
 [ $? -ne 0 ] && exit 1
 
 diff test/data/regression/small.new test/data/regression/small.ref|grep -v seconds
